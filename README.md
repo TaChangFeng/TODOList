@@ -2,10 +2,12 @@
 TODOList列表工具，基于Python3.9和PyQt制作的可视化窗口列表工具。
 A visual window list tool based on Python 3.9 and PyQt for creating TODO lists.
 
-# 📌 TODOList v1.0 — 更新日志（Release Notes）
+工具下载：https://github.com/TaChangFeng/TODOList/releases/tag/v1.0
+
+# 📌 TODOList v1.0.0 — 更新日志（Release Notes）
 
 ## 🎉 版本说明
-TODOList v1.0 是该项目的首个正式可执行版本，支持 Windows 平台独立运行，无需安装 Python 环境。  
+TODOList v1.0.0 是该项目的首个正式可执行版本，支持 Windows 平台独立运行，无需安装 Python 环境。  
 本版本包含完整的任务管理、提醒系统、界面交互与数据持久化功能。
 
 ---
