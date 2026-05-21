@@ -7,6 +7,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets, Qt
 from PyQt5.QtCore import QFile, QIODevice, QMimeData, QTimer, QDateTime, QUrl
 from PyQt5.QtGui import QPalette, QPixmap, QBrush
 from io import StringIO
+import sys, os
+
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
 
 #事项类，对事项进行操作
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
@@ -143,7 +149,7 @@ class timewindow(QWidget):
 
 
     def play_reminder_sound(self):
-        self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile("bgm.mp3")))
+        self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile(resource_path("bgm.mp3"))))
         self.media_player.play()
         print("【消息】音频已播放")
 
@@ -153,7 +159,7 @@ class Ui_MainWindow2(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super(Ui_MainWindow2, self).__init__(parent)
         # 初始化数据
-        default_file_name = "datafile.txt"
+        default_file_name = resource_path("datafile.txt")
         file_path2 = os.path.join(os.getcwd(), default_file_name)
         try:
             # 打开文件
@@ -175,7 +181,7 @@ class Ui_MainWindow2(QtWidgets.QMainWindow):
         QMessageBox.warning(self, "开始使用", "开始使用前，请详细阅读使用说明！", QMessageBox.Ok)
         # 设置背景图片
         palette = MainWindow2.palette()
-        brush = QBrush(QPixmap("pic2.jpg"))
+        brush = QBrush(QPixmap(resource_path("pic2.jpg")))
         palette.setBrush(QPalette.Window, brush)
         MainWindow2.setPalette(palette)
 
@@ -490,7 +496,7 @@ class Ui_MainWindow2(QtWidgets.QMainWindow):
 
     # 使用说明的文件读取
     def readfile2(self):
-        with open('Text3.txt', 'r', encoding='utf-8') as file10:
+        with open(resource_path("Text3.txt"), 'r', encoding='utf-8') as file10:
             content2 = file10.read()
         return content2
 

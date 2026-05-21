@@ -6,6 +6,13 @@ from PyQt5.QtGui import QPalette, QPixmap, QBrush
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from matplotlib.backends.backend_qt import MainWindow
 
+import sys, os
+
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
 #窗口UI设计
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -13,7 +20,7 @@ class Ui_MainWindow(object):
         MainWindow.setFixedSize(1054, 757)
         # 设置背景图片
         palette = MainWindow.palette()
-        brush = QBrush(QPixmap("pic2.jpg"))
+        brush = QBrush(QPixmap(resource_path("pic2.jpg")))
         palette.setBrush(QPalette.Window, brush)
 
         MainWindow.setPalette(palette)
@@ -123,7 +130,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     #项目说明的文件读取
     def readfile(self):
-        with open('Text2.txt', 'r',encoding='utf-8') as file:
+        with open(resource_path("Text2.txt"), 'r', encoding='utf-8') as file:
             content = file.read()
         return content
 
