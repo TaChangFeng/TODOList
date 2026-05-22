@@ -4,6 +4,23 @@ A visual window list tool based on Python 3.9 and PyQt for creating TODO lists.
 
 工具下载：https://github.com/TaChangFeng/TODOList/releases/tag/v1.0
 
+# 📌 TODOList v1.0.1 — 更新日志（Release Notes）
+
+## 🎉 版本说明
+TODOList v1.0.1 优化了程序包的大小，精简了环境。
+
+---
+
+## ✨ 体积优化
+- **[移除 matplotlib 依赖](ca://s?q=扩写matplotlib移除说明)**  
+- **[迁移至精简 venv 环境](ca://s?q=扩写venv迁移说明)**  
+- **[精简 Qt 插件](ca://s?q=扩写Qt插件精简说明)**  
+
+## 🔧 代码清理
+- **[删除冗余 import](ca://s?q=扩写冗余import清理)**
+
+---
+
 # 📌 TODOList v1.0.0 — 更新日志（Release Notes）
 
 ## 🎉 版本说明
