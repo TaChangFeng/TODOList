@@ -4,7 +4,6 @@ import main
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QPalette, QPixmap, QBrush
 from PyQt5.QtWidgets import QApplication, QMessageBox
-from matplotlib.backends.backend_qt import MainWindow
 
 import sys, os
 
